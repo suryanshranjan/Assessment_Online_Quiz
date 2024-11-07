@@ -42,9 +42,7 @@ function loadQuestion() {
 }
 
 function nextQuestion() {
-  const selectedOption = document.querySelector(
-    'input[name ="option"]:checked'
-  );
+  const selectedOption = document.querySelector('input[name="option"]:checked');
   if (selectedOption) {
     if (selectedOption.value === questions[currentQuestionIndex].answer) {
       score += 10;
@@ -64,12 +62,16 @@ function previousQuestion() {
 }
 
 function submitQuiz() {
+  console.log("Submit button clicked");
   const resultElement = document.getElementById("result");
   const scoreElement = document.getElementById("score");
   const resultMessage = document.getElementById("result-message");
 
   scoreElement.innerText = score;
   const percentage = (score / (questions.length * 10)) * 100;
+
+  console.log("Score: ", score);
+  console.log("Percentage: ", percentage);
 
   if (percentage >= 70) {
     resultMessage.innerText = "Congratulations! You passed the quiz.";
