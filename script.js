@@ -47,7 +47,7 @@ function nextQuestion() {
   );
   if (selectedOption) {
     if (selectedOption.value === questions[currentQuestionIndex].answer) {
-      score += 10; // assuming each question is worth 10 points
+      score += 10;
     }
     currentQuestionIndex++;
     loadQuestion();
@@ -82,5 +82,4 @@ function submitQuiz() {
   resultElement.style.display = "block";
 }
 
-// Initialize the quiz
 loadQuestion();
