@@ -64,12 +64,11 @@ function previousQuestion() {
   }
 }
 
-const percentage = (score / (questions.length * 10)) * 100;
 function submitQuiz() {
   console.log("Submit button clicked");
 
   scoreElement.textContent = score;
-
+  const percentage = (score / (questions.length * 10)) * 100;
   console.log("Score: ", score);
   console.log("Percentage: ", percentage);
 
