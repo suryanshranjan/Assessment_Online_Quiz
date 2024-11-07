@@ -74,9 +74,9 @@ function submitQuiz() {
   console.log("Percentage: ", percentage);
 
   if (percentage >= 70) {
-    result-message.innerHTML = "Congratulations! You passed the quiz.";
+    resultMessage.innerText = "Congratulations! You passed the quiz.";
   } else {
-    result-message.innerHTML =
+    resultMessage.innerText =
       "Unfortunately, you did not pass the quiz. Better luck next time!";
   }
 
