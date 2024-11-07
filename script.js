@@ -1,3 +1,6 @@
+const resultElement = document.getElementById("result");
+const scoreElement = document.getElementById("score");
+const resultMessage = document.getElementById("result-message");
 const questions = [
   {
     question: "What is the largest ocean on Earth?",
@@ -61,26 +64,23 @@ function previousQuestion() {
   }
 }
 
+const percentage = (score / (questions.length * 10)) * 100;
 function submitQuiz() {
   console.log("Submit button clicked");
-  const resultElement = document.getElementById("result");
-  const scoreElement = document.getElementById("score");
-  const resultMessage = document.getElementById("result-message");
 
-  scoreElement.innerText = score;
-  const percentage = (score / (questions.length * 10)) * 100;
+  scoreElement.textContent = score;
 
   console.log("Score: ", score);
   console.log("Percentage: ", percentage);
 
   if (percentage >= 70) {
-    resultMessage.innerText = "Congratulations! You passed the quiz.";
+    resultMessage.innerHTML = "Congratulations! You passed the quiz.";
   } else {
-    resultMessage.innerText =
+    resultMessage.innerHTML =
       "Unfortunately, you did not pass the quiz. Better luck next time!";
   }
 
-  document.getElementById("quiz-container").style.display = "none";
+  // document.getElementById("quiz-container").style.display = "none";
   resultElement.style.display = "block";
 }
 
